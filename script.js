@@ -1,6 +1,6 @@
 /**
  * ==========================================================================
- * RANGREZAA — Luxury Indian Couture & Bridal Beauty Studio
+ * Kunjlaadli — Luxury Indian Couture & Bridal Beauty Studio
  * Client Presentation Frontend Demo Logic (Vanilla JavaScript)
  * ==========================================================================
  */
@@ -8,12 +8,12 @@
 // --------------------------------------------------------------------------
 // 1. Brand Configuration (Easily customized for prospective client)
 // --------------------------------------------------------------------------
-const RANGREZAA_CONFIG = {
-  brandName: "RANGREZAA",
+const Kunjlaadli_CONFIG = {
+  brandName: "Kunjlaadli",
   phone: "918077613492", // Plain numbers with country code for wa.me links
   displayPhone: "+91 80776 13492",
   catalogueUrl: "https://wa.me/c/918077613492",
-  instagramHandle: "@rangrezaa.official",
+  instagramHandle: "@Kunjlaadli.official",
   instagramUrl: "https://instagram.com",
   boutiqueAddress: "Heritage Couture Arcade, Near Civil Lines, New Delhi / Jaipur",
   businessHours: "Mon – Sat: 10:30 AM – 8:00 PM | Sunday: By Appointment"
@@ -26,7 +26,7 @@ const RANGREZAA_CONFIG = {
  */
 function createWhatsAppMessageUrl(messageText) {
   const encodedText = encodeURIComponent(messageText.trim());
-  return `https://wa.me/${RANGREZAA_CONFIG.phone}?text=${encodedText}`;
+  return `https://wa.me/${Kunjlaadli_CONFIG.phone}?text=${encodedText}`;
 }
 
 // --------------------------------------------------------------------------
@@ -200,7 +200,7 @@ function initProductEnquiries() {
       const productName = btn.getAttribute('data-product') || 'Featured Item';
       const productPrice = btn.getAttribute('data-price') || 'Enquire for Price';
 
-      const message = `Hello ${RANGREZAA_CONFIG.brandName}! I would like to enquire about the "${productName}" (Listed at ${productPrice}). Please share fabric details, color variations, and ordering process.`;
+      const message = `Hello ${Kunjlaadli_CONFIG.brandName}! I would like to enquire about the "${productName}" (Listed at ${productPrice}). Please share fabric details, color variations, and ordering process.`;
       const url = createWhatsAppMessageUrl(message);
 
       showToast(`Opening WhatsApp enquiry for "${productName}"...`);
@@ -220,7 +220,7 @@ function initServiceEnquiries() {
       const serviceName = btn.getAttribute('data-service') || 'Bridal Service';
       const servicePrice = btn.getAttribute('data-price') || 'Enquire for Price';
 
-      const message = `Hello ${RANGREZAA_CONFIG.brandName} Atelier! I am inquiring about booking the "${serviceName}" package (Package Rate: ${servicePrice}). Could you please share artist availability, trial slots, and booking procedure?`;
+      const message = `Hello ${Kunjlaadli_CONFIG.brandName} Atelier! I am inquiring about booking the "${serviceName}" package (Package Rate: ${servicePrice}). Could you please share artist availability, trial slots, and booking procedure?`;
       const url = createWhatsAppMessageUrl(message);
 
       showToast(`Opening WhatsApp booking for "${serviceName}"...`);
@@ -318,13 +318,13 @@ function initBridalAppointmentForm() {
         month: 'short',
         year: 'numeric'
       });
-    } catch (_) {}
+    } catch (_) { }
 
     const notesVal = notesInput ? notesInput.value.trim() : '';
 
     // Construct Luxury Pre-filled WhatsApp message
-    const message = 
-`✦ *RANGREZAA BRIDAL CONSULTATION INQUIRY* ✦
+    const message =
+      `✦ *Kunjlaadli BRIDAL CONSULTATION INQUIRY* ✦
 ━━━━━━━━━━━━━━━━━━━━━
 • *Client Name:* ${nameVal}
 • *Contact Phone:* ${phoneVal}
@@ -355,15 +355,15 @@ Please check artist availability and share consultation / booking details. Thank
 // --------------------------------------------------------------------------
 function initImageFallbackHandler() {
   const images = document.querySelectorAll('img');
-  
+
   // Creates an exquisite inline SVG placeholder in case of network blocking
   const generateFallbackSvg = (label) => {
-    const cleanLabel = encodeURIComponent(label || 'RANGREZAA Atelier');
-    return `data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="600" height="700" viewBox="0 0 600 700"><rect width="600" height="700" fill="%234C151B"/><rect x="20" y="20" width="560" height="660" fill="none" stroke="%23BD873C" stroke-width="2" stroke-dasharray="6,4"/><circle cx="300" cy="300" r="50" fill="%23351014" stroke="%23BD873C" stroke-width="2"/><text x="300" y="308" font-family="serif" font-size="28" fill="%23BD873C" text-anchor="middle">✦</text><text x="300" y="400" font-family="serif" font-size="24" font-weight="bold" fill="%23FBF5EC" text-anchor="middle">RANGREZAA</text><text x="300" y="435" font-family="sans-serif" font-size="14" fill="%23D9A458" letter-spacing="2" text-anchor="middle">${cleanLabel}</text></svg>`;
+    const cleanLabel = encodeURIComponent(label || 'Kunjlaadli Atelier');
+    return `data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="600" height="700" viewBox="0 0 600 700"><rect width="600" height="700" fill="%234C151B"/><rect x="20" y="20" width="560" height="660" fill="none" stroke="%23BD873C" stroke-width="2" stroke-dasharray="6,4"/><circle cx="300" cy="300" r="50" fill="%23351014" stroke="%23BD873C" stroke-width="2"/><text x="300" y="308" font-family="serif" font-size="28" fill="%23BD873C" text-anchor="middle">✦</text><text x="300" y="400" font-family="serif" font-size="24" font-weight="bold" fill="%23FBF5EC" text-anchor="middle">Kunjlaadli</text><text x="300" y="435" font-family="sans-serif" font-size="14" fill="%23D9A458" letter-spacing="2" text-anchor="middle">${cleanLabel}</text></svg>`;
   };
 
   images.forEach(img => {
-    img.addEventListener('error', function() {
+    img.addEventListener('error', function () {
       // Prevent infinite loop if fallback itself errors
       if (this.dataset.hasFallback) return;
       this.dataset.hasFallback = 'true';
