@@ -91,11 +91,13 @@ function initMobileNavigation() {
       mobileNav.classList.add('is-open');
       toggleBtn.setAttribute('aria-expanded', 'true');
       mobileNav.setAttribute('aria-hidden', 'false');
+      document.body.classList.add('menu-open');
     } else {
       toggleBtn.classList.remove('is-open');
       mobileNav.classList.remove('is-open');
       toggleBtn.setAttribute('aria-expanded', 'false');
       mobileNav.setAttribute('aria-hidden', 'true');
+      document.body.classList.remove('menu-open');
     }
   };
 

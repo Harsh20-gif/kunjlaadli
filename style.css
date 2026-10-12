@@ -131,6 +131,11 @@ ul, ol {
   padding-top: 96px;
   padding-bottom: 96px;
   position: relative;
+  scroll-margin-top: calc(var(--header-height) + 12px);
+}
+
+section[id] {
+  scroll-margin-top: calc(var(--header-height) + 12px);
 }
 
 .text-center {
@@ -2240,6 +2245,16 @@ h1, h2, h3, h4, .brand-title, .italic-serif {
 
   .mobile-toggle.is-open .bar-3 {
     transform: translateY(-6px) rotate(-45deg);
+  }
+
+  body.menu-open {
+    overflow: hidden;
+  }
+
+  .mobile-nav.is-open {
+    max-height: calc(100vh - var(--header-height));
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
   }
 
   .mobile-nav-inner {
