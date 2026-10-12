@@ -220,7 +220,7 @@ function initServiceEnquiries() {
       const serviceName = btn.getAttribute('data-service') || 'Bridal Service';
       const servicePrice = btn.getAttribute('data-price') || 'Enquire for Price';
 
-      const message = `Hello ${Kunjlaadli_CONFIG.brandName} Atelier! I am inquiring about booking the "${serviceName}" package (Package Rate: ${servicePrice}). Could you please share artist availability, trial slots, and booking procedure?`;
+      const message = `Hello ${Kunjlaadli_CONFIG.brandName} ! I am inquiring about booking the "${serviceName}" package (Package Rate: ${servicePrice}). Could you please share artist availability, trial slots, and booking procedure?`;
       const url = createWhatsAppMessageUrl(message);
 
       showToast(`Opening WhatsApp booking for "${serviceName}"...`);
@@ -358,7 +358,7 @@ function initImageFallbackHandler() {
 
   // Creates an exquisite inline SVG placeholder in case of network blocking
   const generateFallbackSvg = (label) => {
-    const cleanLabel = encodeURIComponent(label || 'Kunjlaadli Atelier');
+    const cleanLabel = encodeURIComponent(label || 'Kunjlaadli ');
     return `data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="600" height="700" viewBox="0 0 600 700"><rect width="600" height="700" fill="%234C151B"/><rect x="20" y="20" width="560" height="660" fill="none" stroke="%23BD873C" stroke-width="2" stroke-dasharray="6,4"/><circle cx="300" cy="300" r="50" fill="%23351014" stroke="%23BD873C" stroke-width="2"/><text x="300" y="308" font-family="serif" font-size="28" fill="%23BD873C" text-anchor="middle">✦</text><text x="300" y="400" font-family="serif" font-size="24" font-weight="bold" fill="%23FBF5EC" text-anchor="middle">Kunjlaadli</text><text x="300" y="435" font-family="sans-serif" font-size="14" fill="%23D9A458" letter-spacing="2" text-anchor="middle">${cleanLabel}</text></svg>`;
   };
 
